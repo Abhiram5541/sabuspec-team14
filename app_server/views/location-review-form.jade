@@ -1,29 +1,60 @@
 extends layout
 
 block content
-  .row.banner
-    .col-12
-      h1 Review Starcups
-  .row
-    .col-12.col-md-8
-      form(action="/location/review/new", method="post", role="form")
-        .form-group.row
-          label.col-10.col-sm-2.col-form-label(for="name") Name
-          .col-12.col-sm-10
-            input#name.form-control(name="name", type="text", required)
-        .form-group.row
-          label.col-10.col-sm-2.col-form-label(for="rating") Rating
-          .col-12.col-sm-2
-            select#rating.form-control.input-sm(name="rating", required)
-              option(value="5") 5
-              option(value="4") 4
-              option(value="3") 3
-              option(value="2") 2
-              option(value="1") 1
-        .form-group.row
-          label.col-sm-2.col-form-label(for="review") Review
-          .col-sm-10
-            textarea#review.form-control(name="review", rows="5", required)
-        button.btn.btn-primary.float-right(type="submit") Add my review
-    .col-12.col-md-4
-      // Optionally, you can add more content here if needed
+  .container
+    .row.banner
+      .col-12
+
+    .row.mt-4
+      // First Card for Add Your Review Form
+      .col-12.col-md-8
+        .card
+          .card-body
+            h2.card-title Add Your Review
+            form(action="/location-review-form", method="get", role="form")
+              .form-group
+                label(for='name') Full Name
+                input#name.form-control(type='text', name='name', required=true)
+
+              .form-group
+                label(for='email') Email
+                input#email.form-control(type='email', name='email', required=true)
+
+              .form-group
+                label(for='style') Rate Us
+                select#style.form-control(name='style', required=true)
+                  option(value='') Select a Rating
+                  option(value='1star') 1 Star
+                  option(value='2star') 2 Stars
+                  option(value='3star') 3 Stars
+                  option(value='4star') 4 Stars
+                  option(value='5star') 5 Stars
+
+              .form-group
+                label(for='message') Feedback
+                textarea#message.form-control(name='message', rows='3')
+
+              button.btn.btn-primary(type='submit') Submit Review
+
+// Second Card for Customer Reviews
+    .row.mt-4 // Add a new row for the second card
+      .col-12.col-md-8
+        .card
+          .card-body
+            h2.card-title Customer Reviews
+            .review
+              span.rating
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.far.fa-star
+              p Excellent quality and fast delivery! I highly recommend SabuSpec for custom number plates.
+            .review
+              span.rating
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+              p I loved the variety of options available. The staff was very helpful in guiding me through the selection process.

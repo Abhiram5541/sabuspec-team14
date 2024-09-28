@@ -1,133 +1,252 @@
-/* General Styles */
-body {
-  background-color: #000; /* Black background */
-  color: #fff; /* White text color */
-  font-family: 'EGER', sans-serif; /* Using EGER font */
-  margin: 0;
-  padding: 0;
-  background-image: url('path/to/your-background-image.jpg'); /* Background image */
-  background-size: cover;
-}
-
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-}
-
-/* Header and Banner */
-.banner {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.banner h1 {
-  font-size: 3rem;
-  color: #ff6f61; /* Accent color */
-  font-weight: 700;
-}
-
-.banner small {
-  display: block;
-  font-size: 1.2rem;
-  color: #fff;
-  font-weight: 300;
-}
-
-/* Card Styles */
-.card {
-  background-color: #222; /* Dark card background */
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
-  color: #fff;
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.card-block {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.card h4 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #ff6f61; /* Accent color for headings */
-  font-weight: 700;
-}
-
-.card h4 a {
-  color: #ff6f61;
-  text-decoration: none;
-}
-
-.card h4 a:hover {
-  text-decoration: underline;
-}
-
-.card .stars {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.card p {
-  margin: 0;
-}
-
-.card p.facilities {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.card p.facilities span.badge {
-  font-size: 0.875rem;
-  background-color: #ff6f61;
-  color: #fff;
-  border-radius: 15px;
-  padding: 5px 12px;
-}
-
-/* Footer Styles */
-.footer {
-  padding: 20px 0;
-  background-color: #333;
-  text-align: center;
-}
-
-.footer small {
-  color: #ddd;
-  font-size: 0.875rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .row {
-      flex-direction: column;
+  /* General Styles */
+  body {
+    background-color: #1a1a1a; /* Dark premium background */
+    color: #e6e6e6; /* Light text color */
+    font-family: 'EGER', sans-serif; /* Premium, modern font */
+    margin: 0;
+    padding: 0;
+    background-image: url('bc.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Fixed background for parallax effect */
+    background-repeat: no-repeat; /* Prevent background repeat */
+    padding-top: 70px; /* Added padding to avoid content being covered by navbar */
+    box-sizing: border-box; /* Ensure consistent padding and border calculations */
   }
 
-  .col-md-6 {
-      margin-bottom: 20px;
+  /* Navbar */
+  .navbar-small {
+    height: 50px; /* Slightly taller for more luxury */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(45, 40, 40, 0.7); /* Use consistent rgba format */
+    border-bottom: 2px solid rgba(255, 94, 91, 0.9);
+    border-bottom: 2px solid #ff5e5b; /* Accent color for border */
+    position: fixed; /* Makes the navbar fixed at the top */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures navbar stays on top of other content */
   }
-}
 
-@media (max-width: 576px) {
+  .navbar-small .navbar-brand {
+    font-size: 1.2rem; /* Slightly larger font */
+    color: #ff5e5b; /* Accent color */
+    font-weight: 700;
+  }
+
+  .navbar-small .navbar-nav .nav-link {
+    font-size: 1rem; /* Refined nav links */
+    color: #e6e6e6;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-small .navbar-nav .nav-link:hover {
+    color: #ff5e5b; /* Subtle hover effect */
+  }
+
+  .navbar-small .navbar-toggler {
+    padding: 4px 12px;
+  }
+
+  .navbar-small .navbar-toggler-icon {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+
+  /* Header and Banner */
+  .banner {
+    margin-top: 1em; /* Adjusted margin for better spacing */
+    text-align: center;
+    margin-bottom: 20px; /* Reduce margin for a tighter layout */
+    padding-bottom: 0.5em;
+  }
+
   .banner h1 {
-      font-size: 2.5rem;
+    font-size: 4rem; /* Reduced font size for premium feel */
+    color: #ff5e5b; /* Muted premium accent color */
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Soft shadow for premium effect */
+  }
+
+  .banner small {
+    display: block;
+    font-size: 1rem;
+    color: #ccc;
+    font-weight: 300;
+  }
+
+  /* Container */
+  .container {
+    max-width: 100px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align the content */
+    margin-top: 20px; /* Space between navbar and container */
+  }
+
+  /* Card Styles */
+  .card {
+    width: 100%; /* or a fixed width like 600px */
+    max-width: 600px; /* Ensure it doesn't exceed 600px */
+    margin: auto; 
+    background-color: #292929; /* Elegant dark background for cards */
+    border: 1px solid #3a3a3a; /* Subtle border */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Deep premium shadow */
+    color: #e6e6e6;
+    margin: 15px; /* Reduced margin for a more compact look */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px; /* Reduced card width for smaller size */
+    flex: 0 0 auto; /* Prevent cards from stretching */
+  }
+
+  .card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+  }
+
+  .card-block {
+    padding: 15px; /* Reduced padding for a tighter look */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   .card h4 {
-      font-size: 1.25rem;
+    font-size: 1.5rem; /* Slightly reduced for a premium look */
+    margin-bottom: 10px;
+    color: #ff5e5b; /* Accent color */
+    font-weight: 700;
   }
 
-  .card .stars i.fas {
-      margin: 0 1px;
+  .card h4 a {
+    color: #ff5e5b;
+    text-decoration: none;
+    transition: color 0.3s ease;
   }
-}
+
+  .card h4 a:hover {
+    color: #f4a261; /* Hover effect with lighter shade */
+    text-decoration: underline;
+  }
+
+  .card .stars {
+    margin-bottom: 15px; /* Reduced margin for a more compact layout */
+    display: flex;
+    justify-content: center;
+  }
+
+  .card p {
+    margin: 0;
+  }
+
+  .card p.facilities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Reduced gap for tighter layout */
+  }
+
+  .card p.facilities span.badge {
+    font-size: 0.875rem;
+    background-color: #ff5e5b;
+    color: #fff;
+    border-radius: 15px;
+    padding: 5px 10px;
+  }
+  .content-wrapper {
+    text-align: left; /* Align text to the left */
+    margin-top: 20px; /* Add space above the content */
+  }
+
+  .content-wrapper h1 {
+    font-size: 2rem; /* Adjust font size for the title */
+    color: #ff5e5b; /* Accent color for the title */
+  }
+
+  .content-wrapper p {
+    font-size: 1rem; /* Adjust font size for the paragraph */
+    margin-bottom: 15px; /* Space below the paragraph */
+  }
+
+  .content-wrapper ul {
+    list-style-type: disc; /* Bullet points for the list */
+    margin-left: 20px; /* Indent the list */
+  }
+
+  .content-wrapper li {
+    margin-bottom: 5px; /* Space between list items */
+    color: #e6e6e6; /* Ensure text color is readable */
+  }
+
+  /* Footer Styles */
+  .footer {
+    padding: 20px 0;
+    background-color: #1a1a1a; /* Consistent dark background */
+    text-align: center;
+  }
+
+  .footer small {
+    color: #999;
+    font-size: 0.875rem;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    background-color: #ff5e5b; /* Premium accent color */
+    border: none;
+    padding: 8px 16px; /* Reduced padding for a more compact button */
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #f4a261; /* Subtle hover change */
+  }
+
+  /* Transitions */
+  * {
+    box-sizing: border-box; /* Ensure consistent sizing */
+    transition: all 0.3s ease;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column; /* Stack cards vertically */
+      align-items: center; /* Center align in small screens */
+      padding-top: 70px; /* Extra padding to prevent overlap with navbar */
+    }
+    
+    .banner h1 {
+      font-size: 2.5rem;
+    }
+
+    .card {
+      width: 90%; /* Expand cards to almost full width for small screens */
+    }
+
+    .card h4 {
+      font-size: 1.25rem;
+    }
+
+    .card .stars i.fas {
+      margin: 0 1px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .banner h1 {
+      font-size: 2rem;
+    }
+
+    .card h4 {
+      font-size: 1.1rem;
+    }
+
+    .card .stars i.fas {
+      margin: 0 1px;
+    }
+  }
