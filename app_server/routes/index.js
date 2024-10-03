@@ -4,8 +4,15 @@ const ctrlLocations = require('../controllers/locations');
 const ctrlOthers = require('../controllers/others');
 
 /* Locations pages */
-router.get('/', ctrlLocations.homelist);
-router.get('/location', ctrlLocations.locationInfo);
+router.get('/', ctrlLocations.homelist);  // Home page for locations
+router.get('/Number', ctrlLocations.locationInfo);  // General location info
+
+/* Location info specific for rims */
+router.get('/Rims', ctrlLocations.locationInfoRims);
+
+router.get('/PPF', ctrlLocations.locationInfoPpf);
+
+router.get('/Exhaust', ctrlLocations.locationInfoExhaust);
 
 /* Review page */
 router.get('/review', (req, res) => {
@@ -21,5 +28,3 @@ router.get('/contact', (req, res) => {
 router.get('/about', ctrlOthers.about);
 
 module.exports = router;
-    
- 

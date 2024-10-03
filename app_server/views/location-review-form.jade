@@ -14,11 +14,11 @@ block content
             form(action="/location-review-form", method="get", role="form")
               .form-group
                 label(for='name') Full Name
-                input#name.form-control(type='text', name='name', required=true)
+                input#name.form-control(type='text', name='Full Name', required=true)
 
               .form-group
                 label(for='email') Email
-                input#email.form-control(type='email', name='email', required=true)
+                input#email.form-control(type='email', name='Email-id', required=true)
 
               .form-group
                 label(for='style') Rate Us
@@ -35,26 +35,3 @@ block content
                 textarea#message.form-control(name='message', rows='3')
 
               button.btn.btn-primary(type='submit') Submit Review
-
-// Second Card for Customer Reviews
-    .row.mt-4 // Add a new row for the second card
-      .col-12.col-md-8
-        .card
-          .card-body
-            h2.card-title Customer Reviews
-            .review
-              span.rating
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.far.fa-star
-              p Excellent quality and fast delivery! I highly recommend SabuSpec for custom number plates.
-            .review
-              span.rating
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-              p I loved the variety of options available. The staff was very helpful in guiding me through the selection process.

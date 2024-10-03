@@ -26,17 +26,29 @@ const homelist = (req, res) => {
   });
 };
 
-/* GET 'Location info' page */
+/*'Location info'*/
 const locationInfo = (req, res) => {
   res.render('location-info', { title: 'Location Info' });
 };
 
-/* GET 'Add review' page */
+const locationInfoRims = (req, res) => {
+  res.render('location-info_rims', { title: 'Location Info Rims' });
+};
+
+const locationInfoPpf = (req, res) => {
+  res.render('location-info_Ppf', { title: 'Location Info Ppf' });
+};
+
+const locationInfoExhaust = (req, res) => {
+  res.render('location-info_exhaust', { title: 'Location Info Exhaust' });
+};
+
+/*'Add review' */
 const addReview = (req, res) => {
   res.render('location-review-form', { title: 'Add Review' });
 };
 
-/* GET 'Contact' page */
+/*'Contact'*/
 const contactInfo = (req, res) => {
   res.render('contact', { title: 'Contact Us' });
 };
@@ -44,6 +56,9 @@ const contactInfo = (req, res) => {
 module.exports = {
   homelist,
   locationInfo,
+  locationInfoRims,
+  locationInfoPpf,
+  locationInfoExhaust,
   addReview,
-  contactInfo // Corrected here to maintain naming consistency
+  contactInfo 
 };

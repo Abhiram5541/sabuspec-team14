@@ -7,10 +7,10 @@ block content
       .col-12.col-md-6.col-lg-3
       each location in locations
         .card
-          // Add an image for each location
+ 
           img(src=location.imageUrl, alt=' image', class='card-img-top') // Ensure each location object has an imageUrl property
           .card-block
             h4
-              a(href="/location")= location.name
-
+              a(href=`/${location.name.split(' ')[0]}`)= location.name
+              
     .col-12.text-center

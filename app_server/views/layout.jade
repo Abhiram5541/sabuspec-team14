@@ -3,33 +3,35 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Title 
-    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css") 
+    title SabuSpec
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css")
     link(rel="stylesheet", href="/stylesheets/bootstrap.min.css")
     link(rel="stylesheet", href="/stylesheets/all.min.css")
     link(rel="stylesheet", href="/stylesheets/style.css")
-    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap")
+
   body
-    nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.bg-transparent
-        a.navbar-brand(href="/") 
-          img(src='../stylesheets/logo.jpg', alt='SabuSpec Logo', height='50') 
-        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
-          span.navbar-toggler-icon
-        #navbarMain.navbar-collapse.collapse
-          ul.navbar-nav.ml-auto
-            li.nav-item
-              a.nav-link(href="/") Home  
-            li.nav-item
-              a.nav-link(href="/About/") About
-            li.nav-item
-              a.nav-link(href="/Review/") Review
-            li.nav-item
-              a.nav-link(href="/Contact/") Contact
+    nav.navbar-small.fixed-top.navbar-expand-lg.navbar-dark.bg-transparent
+      a.navbar-brand(href="/")
+        img(src='/stylesheets/logo.jpg', alt='SabuSpec Logo', height='50')
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNav.navbar-collapse.collapse
+        ul.navbar-nav.ml-auto
+          li.nav-item
+            a.nav-link(href="/") Home
+          li.nav-item
+            a.nav-link(href="/About/") About
+          li.nav-item
+            a.nav-link(href="/Review/") Review
+          li.nav-item
+            a.nav-link(href="/Contact/") Contact
+
     .container.content
       block content
         .row
           .col-12.text-center
             small &copy; sabuspec 2024. All rights reserved.
+
     script(src="https://code.jquery.com/jquery-3.6.0.min.js", integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl4+5Wn8A77x0yqv9K6nx45XlRdt64vM2fj34Chs9lz", crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js", integrity="sha384-oBqDVmMz4fnFO9FzhQ4zE6zFdZ2vw9dR6b30N5L2OwGfKkMiLZrABZ2Q19rC81P2", crossorigin="anonymous")
     script(src="/javascripts/bootstrap.min.js")

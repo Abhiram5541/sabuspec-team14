@@ -9,13 +9,28 @@ block content
       .col-12.col-lg-4
         .card.card-secondary
           .card-block
-            h2.card-title Contact Us
+            h2.card-title Contact Information
             p Have questions? Reach out to us for more information about our number plate services.
-            p Email: sabuspec69@ghmai.com
-            p Phone: 9121029017
+            p 
+              | Email: 
+              a(href="mailto:sabuspec69@gmail.com") sabuspec69@gmail.com
+            p 
+              | Phone: 
+              a(href="tel:+919121029017") +91 9121029017
             p 
               | Address: 
               li Ground Floor, #286/A, Sri Mahaan Heights, Lane No. 12, Banjara Hills, Hyderabad, Telangana 500034
             form(action="/contact", method="get", role="form")
-              // Your form fields go here
+              .form-group
+                label(for="name") Your Name
+                input.form-control(type="text", name="name", placeholder="Enter your name", required=true)
 
+              .form-group
+                label(for="email") Your Email
+                input.form-control(type="email", name="email", placeholder="Enter your email", required=true)
+
+              .form-group
+                label(for="message") Your Message
+                textarea.form-control(name="message", placeholder="Type your message here", rows="5", required=true)
+
+              button.btn.btn-primary(type="submit") Submit
