@@ -5,7 +5,7 @@ require('dotenv').config(); // Load environment variables
 const dbURI = process.env.MONGODB_URI || "mongodb://localhost:27017/sabuspec";
 
 // Connect to MongoDB
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(dbURI, { useNewUrlParser: true});
 
 // Connection event listeners
 mongoose.connection.on('connected', () => {
