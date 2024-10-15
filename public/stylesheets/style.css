@@ -5,7 +5,7 @@ body {
   font-family: 'EGER', sans-serif; /* Premium, modern font */
   margin: 0;
   padding: 0;
-  background-image: url('bc.jpg'); /* Background image */
+  background-image: url('bc.jpg');
   background-size: cover;
   background-position: center; /* Center the background image */
   background-attachment: fixed; /* Fixed background for parallax effect */
@@ -100,6 +100,7 @@ body {
   text-align: center;
   margin-bottom: 20px;
   padding-bottom: 0.5em;
+  
 }
 
 .banner h1 {

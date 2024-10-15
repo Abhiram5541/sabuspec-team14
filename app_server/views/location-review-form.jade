@@ -6,19 +6,18 @@ block content
       .col-12
 
     .row.mt-4
-      // First Card for Add Your Review Form
       .col-12.col-md-8
         .card
           .card-body
             h2.card-title Add Your Review
-            form(action="/location-review-form", method="get", role="form")
+            form(action="/location-review-form", method="post", role="form")
               .form-group
                 label(for='name') Full Name
-                input#name.form-control(type='text', name='Full Name', required=true)
+                input#name.form-control(type='text', name='name', required=true)
 
               .form-group
                 label(for='email') Email
-                input#email.form-control(type='email', name='Email-id', required=true)
+                input#email.form-control(type='email', name='email', required=true)
 
               .form-group
                 label(for='style') Rate Us
@@ -35,3 +34,18 @@ block content
                 textarea#message.form-control(name='message', rows='3')
 
               button.btn.btn-primary(type='submit') Submit Review
+
+    // Section to display all submitted reviews
+    if reviews && reviews.length > 0
+      .row.mt-4
+        .col-12.col-md-8
+          each review in reviews
+            .card.mb-3
+              .card-body
+                h4 #{review.name} 
+                p #{review.message}
+                p.rating Rating: #{review.style}
+                p.text-muted Submitted on #{review.createdAt.toDateString()}
+    else
+      .col-12
+        p.text-center No reviews submitted yet.

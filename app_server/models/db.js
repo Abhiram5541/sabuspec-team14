@@ -1,36 +1,49 @@
 const mongoose = require('mongoose');
-const dbURI = 'mongodb://localhost:27017/db';
-mongoose.connect(dbURI, {useNewUrlParser: true});
+require('dotenv').config(); // Load environment variables
+
+// Use environment variable for the database URI or default to localhost
+const dbURI = process.env.MONGODB_URI || "mongodb://localhost:27017/sabuspec";
+
+// Connect to MongoDB
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
+
+// Connection event listeners
 mongoose.connection.on('connected', () => {
- console.log(`Mongoose connected to ${dbURI}`);
+    console.log(`Mongoose connected to ${dbURI}`);
 });
+
 mongoose.connection.on('error', err => {
- console.log(`Mongoose connection error: ${err}`);
+    console.log('Mongoose connection error:', err);
 });
+
 mongoose.connection.on('disconnected', () => {
- console.log('Mongoose disconnected');
+    console.log('Mongoose disconnected');
 });
-const gracefulShutdown = (msg, callback) => {
- mongoose.connection.close( () => {
- console.log(`Mongoose disconnected through ${msg}`);
- callback();
- });
+
+// Require the Review and Location models
+require('./review');
+require('./location'); // Ensure you have the location model as well
+
+const gracefulShutdown = function (msg, callback) {
+    mongoose.connection.close(function () {
+        console.log('Mongoose disconnected through ' + msg);
+        callback();
+    });
 };
-// For nodemon restarts
-process.once('SIGUSR2', () => {
- gracefulShutdown('nodemon restart', () => {
- process.kill(process.pid, 'SIGUSR2');
- });
+
+// Handle process termination signals
+process.once('SIGUSR2', function () {
+    gracefulShutdown('nodemon restart', function () {
+        process.kill(process.pid, 'SIGUSR2');
+    });
 });
-// For app termination
-process.on('SIGINT', () => {
- gracefulShutdown('app termination', () => {
- process.exit(0);
- });
+process.on('SIGINT', function () {
+    gracefulShutdown('app termination', function () {
+        process.exit(0);
+    });
 });
-// For Heroku app termination
-process.on('SIGTERM', () => {
- gracefulShutdown('Heroku app shutdown', () => {
- process.exit(0);
- });
+process.on('SIGTERM', function() {
+    gracefulShutdown('Heroku app shutdown', function () {
+        process.exit(0);
+    });
 });
