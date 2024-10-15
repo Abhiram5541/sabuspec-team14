@@ -4,8 +4,8 @@ const ctrlLocations = require('../controllers/locations');
 const ctrlOthers = require('../controllers/others');
 
 /* Locations pages */
-router.get('/', ctrlLocations.homelist);  // Home page for locations
-router.get('/Number', ctrlLocations.locationInfo);  // General location info
+router.get('/', ctrlLocations.homelist);
+router.get('/Number', ctrlLocations.locationInfo);  
 
 /* Location info specific for rims */
 router.get('/Rims', ctrlLocations.locationInfoRims);

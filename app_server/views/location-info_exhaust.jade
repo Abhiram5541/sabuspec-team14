@@ -5,7 +5,7 @@ block content
     .col-12
 
   .row
-    .col-12.col-lg-8
+    .col-12.col-lg-6
       .card.card-primary
         .card-block
           h2.card-title Choose Your Style
@@ -13,21 +13,7 @@ block content
 
       .card.card-primary
         .card-block
-          h2.card-title Popular Designs
-          .row
-            .col-12.col-md-4
-              img.img-fluid(src='path/to/design1.jpg')
-              p.text-center Design 1
-            .col-12.col-md-4
-              img.img-fluid(src='path/to/design2.jpg')
-              p.text-center Design 2
-            .col-12.col-md-4
-              img.img-fluid(src='path/to/design3.jpg')
-              p.text-center Design 3  
-
-      .card.card-primary
-        .card-block
-          h2.card-title EXHAUST Custiomization Form
+          h2.card-title EXHAUST Customization Form
           form(method='post', action='/customize-number-plate')
             .form-group
               label(for='name') Full Name
@@ -47,3 +33,17 @@ block content
               textarea#message.form-control(name='message', rows='3')
             button.btn.btn-primary(type='submit') Submit Customization Request
 
+    .col-12.col-lg-6
+      .card.card-primary
+        .card-block
+          h2.card-title Popular Designs
+          .row
+            .col-12.col-md-4
+              img.img-fluid(src='/stylesheets/exhaust1.jpg')
+              p.text-center Design 1
+            .col-12.col-md-4
+              img.img-fluid(src='/stylesheets/exhaust2.jpg')
+              p.text-center Design 2
+            .col-12.col-md-4
+              img.img-fluid(src='/stylesheets/exhaust3.jpg')
+              p.text-center Design 3
